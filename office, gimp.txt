@@ -1,0 +1,9 @@
+//Latest
+sudo pacman -S libreoffice-fresh
+
+//Stable
+sudo pacman -S libreoffice-still
+
+
+
+sudo pacman -S gimp

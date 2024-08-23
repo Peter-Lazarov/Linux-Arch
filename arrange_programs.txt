@@ -1,0 +1,41 @@
+ 
+sudo pacman -S wmctrl
+
+
+
+#!/bin/bash
+# Launch the program
+my_program &
+
+# Wait for the program to start up. Adjust the time as needed.
+sleep 10s
+
+# Use wmctrl to position the window.
+# Replace 'My Program' with the name of your program's window.
+# The numbers are the position: horizontal_offset, vertical_offset, width, height.
+wmctrl -r 'My Program' -e 0,100,100,800,600
+
+
+
+Make sure to replace my_program with the command to start your program, and 'My Program' with the title of your program’s window. The numbers 100,100,800,600 represent the position and size of the window: horizontal_offset,vertical_offset,width,height. Adjust these values as needed.
+
+Create a systemd service file: Systemd can be used to run your script at startup. You’ll need to create a service file in /etc/systemd/system, for example /etc/systemd/system/my_program.service. Here’s an example of what the service file could look like:
+[Unit]
+Description=Start and position my program
+
+[Service]
+ExecStart=/path/to/my/script.sh
+
+[Install]
+WantedBy=multi-user.target
+
+Replace /path/to/my/script.sh with the path to the script you created earlier.
+
+Enable the systemd service: Once you’ve created the service file, you can enable it so that it runs at startup:
+sudo systemctl enable my_program.service
+
+Replace my_program.service with the name of your service file.
+
+Please note that this is a general guide and might need to be adjusted depending on the specifics of your situation. Always make sure to test your scripts and service files to ensure they work as expected
+
+

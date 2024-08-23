@@ -1,0 +1,24 @@
+
+Endeavour OS Legacy install
+Used on Lenovo Thinkcentre M81
+Flash drive I create on Windows 8.1 with rufus formatted as MBR
+(on Linux with dd command do not boot)
+
+Grub loader, because there is no boot loader
+
+12 MB unformated
+17 GB swap swap
+35-42 GB root
+50-70 GB home
+
+
+--------------------------------------------
+This is UEFI installation it not work on M81
+Flash drive can be created on linux with dd command
+
+Endeavour OS UEFI
+512MB fat32 /boot/efi - bios-grub, boot
+35-42GB ext4 / - root
+50GB ext4 /home
+
+

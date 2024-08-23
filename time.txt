@@ -1,0 +1,31 @@
+https://askubuntu.com/questions/169376/clock-time-is-off-on-dual-boot
+
+Ubuntu
+
+timedatectl set-local-rtc 1
+
+
+
+
+
+
+
+//not used
+Windows 8.1
+---------------------------------------------------------------
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+     "RealTimeIsUniversal"=dword:00000001
+
+sc config w32time start= disabled
+
+---------------------------------------------------------------
+Reversing the change
+
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+     "RealTimeIsUniversal"=-
+
+
+sc config w32time start= demand
+

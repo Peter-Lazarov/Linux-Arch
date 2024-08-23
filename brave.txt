@@ -1,0 +1,3 @@
+yay -S brave-bin
+
+brave --version

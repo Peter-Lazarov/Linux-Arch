@@ -1,0 +1,11 @@
+sudo pacman -S vivaldi
+
+sudo pacman -S vivaldi-ffmpeg-codecs
+
+
+//Disable keyrings ask
+Open the KDE Wallet Manager: You can usually find this in your system’s application menu1.
+Go to Settings: In the KDE Wallet Manager, go to Settings > Configure Wallet1.
+Disable the KDE Wallet Subsystem: Uncheck the box that says Enable the KDE wallet subsystem1.
+
+//If there is no KDE wallet install it see txt

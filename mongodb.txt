@@ -1,0 +1,46 @@
+https://forum.endeavouros.com/t/installation-of-mongodb/42639
+
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+yay -S mongodb-bin
+
+yay -S mongodb-compass
+
+
+
+-------------------------------------------------------
+Creating a service
+
+sudo touch mongod.service
+sudo nano mongod.service
+
+------------------------------
+[Unit]
+Description=MongoDB Database Server
+After=network.target
+
+[Service]
+User=mongodb
+Group=mongodb
+ExecStart=/usr/bin/mongod --config /etc/mongodb.conf
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+------------------------------
+
+//run service at system boot
+sudo systemctl enable mongod
+
+
+//MongoDB daemon
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+sudo systemctl stop mongod

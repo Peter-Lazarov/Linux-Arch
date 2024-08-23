@@ -1,0 +1,11 @@
+In Endeavour OS has no kwallet in search menu
+
+so I install first
+sudo pacman -S kwallet
+then
+sudo pacman -S kwalletmanager
+
+and then
+
+search wallet > settings > configure wallet > uncheck enable KDE wallet subsystem
+

@@ -1,0 +1,10 @@
+sudo pacman -Syu
+sudo pacman -S firefox
+
+
+
+---------------
+search sound
+
+about:config
+accessibility.typeaheadfind.enablesound

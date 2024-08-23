@@ -1,0 +1,32 @@
+sudo pacman -Syu
+
+sudo pacman -S nodejs npm
+
+//For different version
+1. Install NVM:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
+2. Set up NVM: Add the following lines to your shell’s startup file:
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+3. Install a specific version of Node.js:
+nvm install 8.0
+
+4. Use the installed version:
+nvm use 8.0
+
+
+
+
+Uninstall
+-------------------------------
+sudo pacman -Rsc -n nodejs
+sudo rm -rf /var/cache/yum
+
+
+Install node.js 20 version
+--------------------------------
+//some versions do not include npm so it need to install additionally
+sudo pacman -S nodejs-lts-iron
+sudo pacman -S npm

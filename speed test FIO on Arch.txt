@@ -1,0 +1,5 @@
+sudo pacman -S fio
+
+fio --name=seq_write --numjobs=1 --size=1G --ioengine=libaio --direct=1 --verify=0 --bs=1M --iodepth=8 --rw=read --group_reporting=1
+
+fio --name=seq_write --numjobs=1 --size=1G --ioengine=libaio --direct=1 --verify=0 --bs=1M --iodepth=8 --rw=write --group_reporting=1
