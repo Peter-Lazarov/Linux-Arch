@@ -1,0 +1,14 @@
+https://docs.docker.com/desktop/install/linux/archlinux/
+
+wget https://download.docker.com/linux/static/stable/x86_64/docker-27.2.1.tgz -qO- | tar xvfz - docker/docker --strip-components=1
+
+sudo mv ./docker /usr/local/bin
+
+https://docs.docker.com/desktop/release-notes/
+download the Arch version
+from download run
+sudo pacman -U ./docker-desktop-x86_64.pkg.tar.zst
+
+Pass
+https://docs.docker.com/desktop/get-started/#credentials-management-for-linux-users
+
