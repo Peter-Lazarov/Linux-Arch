@@ -1,0 +1,179 @@
+10.Sep.2023 Play with docker learing linux first commands
+https://labs.play-with-docker.com
+
+Files and Directories ------------------------------------------------------------------------------
+pwd - print working directory
+ls - list files
+ls -al	- any hidden files and folders
+ctrl + l or clear //clear screen
+ls os* - shows all files staring with os
+cat os-release - open file os-release  -- Cat is short for concatenate. This command displays the contents of one or more files without having to open the file for editing. /etc/os-release Seems this file contains detailed information about our distribution.
+uname -a - returns the machine architecture i.e. i386 for Intel/AMD platforms
+mkdir work - create directory work
+mkdir work2 work3 - create two directories work2 and work3
+mkdir -pv projects/project1 -- Create nested direktories
+
+rm - remove
+rm -rf * - -r recursive, f force
+rm -rf / - VERRY dangerous, delete all files and folders on operating system
+cp file1.txt ~/dir1/file2.txt - Copy files and directories
+cp /etc/*.conf ~/dir2 - Copy multiple files to a folder
+mv file1.txt first-file.txt - Rename a file 
+mv *.txt ~/TextFiles - Move multiple files to a folder
+
+touch file.txt
+mkdir -p ./TextFiles && cp file.txt ./TextFiles - create folder and copy file in it
+
+head /etc/passwd - Show first ten lines of a file
+head -n 3 /etc/passwd - Show first three lines of a file
+
+tail /etc/passwd - Show last ten lines of a file
+tail -n 3 /etc/passwd - Show last three lines of a file
+
+cat file.txt - read file
+
+touch file1.txt - Create an empty file
+touch -a .bash_history - Change access time of a file
+
+Standart File Descriptors ------------------------------------------------------------------------------
+0 stdin
+1 stdout
+2 stderr
+ping google.com 1> pingGoogle.txt - save ping in file, 1> could be skipped directly >
+cat unexisting_file.txt 2> error_file.txt - save error in file without throw error in console
+echo "Hello" > hello.txt - write in the file
+echo "Hello2" > hello.txt - overwrite in the file
+echo "Hello3" > hello.txt - add Hello3 to the file with Hello2
+
+hostname - command in Linux is used to obtain the DNS (Domain Name System) name and set the system's hostname or NIS (Network Information System) domain name.
+cd - return to root
+cd .. - return one directory back 
+logout
+exit -similar as logout
+date
+cal - calendar, cal -3 - 3 months, cal -n 4, cal 2022 - whole year
+uptime - how long our system is operating
+history - shows written commands
+.bash_history - at root have such file which hold all commands history
+
+echo "date +%y-%m-%d" >> date.sh - create file, crate script date.sh
+chmod +x date.sh - change permisions for execude
+./date.sh - execute the script
+vi date.sh - edit the file - with typing esc + :wq or hiting esc + ZZ
+bash -n date.sh - test file for sintactic error
+
+Command Sequences ------------------------------------------------------------------------------
+command1;command2 - disconnected, execude two command one after another
+command1|command2 - connected, execude first one and give it's result to second command
+Conditionally
+command1&&command2 - on success
+command1||command2 - on failure
+
+Users ------------------------------------------------------------------------------
+Users file (/etc/passwd)
+root:x:0:0:root:/root:/bin/bash
+1 Username (login) - root:
+2 Password placeholder - x:
+3 User ID - 0:
+4 Group ID - 0:
+5 Comment (full name, phone, etc.) - root:
+6 Home directory - /root:
+7 User shell - :/bin/bash
+madmin:x:1000:1000:M.Admin:/home/madmin:/bin/bash
+
+sudo su testuser -- switch user to testuser
+su - testuser -- Switch to a user with a login shell
+
+chown [options] [owner][:[group]] file
+chown peter:developers file.txt -- Change both owner and group of a file
+stat file.txt - show file properties
+
+apk add sudo - Installing sudo and create file /etc/sudoers
+Add new user ----------------
+adduser student
+echo "student ALL=(ALL:ALL) ALL" > /etc/sudoers.d/student
+sudo su - student
+//sudo su -- to become root it will not work unless we include student into /etc/sudoers.d/ folder // do not work at all
+
+adduser worker -G one -- create user (worker) and assign to group (one)
+
+
+Groups ------------------------------------------------------------------------------
+Groups file (/etc/group)
+root:x:0:
+wheel:x:10:madmin
+madmin:x:1000
+1 Group name - wheel:
+2 Password placeholder - x:
+3 Group ID - 10:
+4 Group members - :madmin
+
+chgrp developers file* - Change the group of files*
+addgroup one - Create group
+
+
+Permisions ------------------------------------------------------------------------------
+Permissions Octal mask Description
+--------- 000 No permissions
+rw-rw-rw- 666 Everyone read + write
+rwxr-xr-x 755 Owner full access, others read + execute
+rwxrwxrwx 777 Everyone read, write, and execute
+chmod 000 myFile.txt
+
+Enviroment Variables ------------------------------------------------------------------------------
+set 
+set | less - one page on screen - escape with Q or ctrl + c
+set -o -  In order to see what parameters are there
+set +o - the same information but prepared for re-use with
+set -x - minus ("-") is used to turn on a flag, while the plus ("+") is used to deactivate a flag --xtrace mode
+set|grep variable1 - show value of given variable
+
+noexec - parameter test script for sintactic error before it is executed
+
+help
+help | less
+help cd | less - shows help about given command
+    the man - some kind of helping mode it can be searched in this mode with / and then n - forward and N backward, ? for backward search maybe in pages
+    Key [h] shows help information
+    Key [q] either exits the help mode or the man
+
+env - exported variables
+echo "export Variable6=Test6" >> .profile - create Variable6 with value Test6 this is a exported variable
+
+Package manager ------------------------------------------------------------------------------
+apk add mandoc man-pages - add man apk
+man - to execute it
+apk search iptables - search for apk
+apk search iptables|grep doc search for apk with key word doc
+
+apt
+apt install curl - Install curl
+apt update - update all packages
+apt upgrade - can upgrade operating system
+
+Firewall setup ------------------------------------------------------------------------------
+man iptables
+
+SSH (Secure Shell) ------------------------------------------------------------------------------
+ssh 192.168.0.28 -l root - connecting to remote linux machine
+
+Jobs ------------------------------------------------------------------------------
+jobs - List all jobs
+jobs -l - Print all jobs with extended information
+
+Process ------------------------------------------------------------------------------
+ps aux - List every process on the system
+ps axjf - Print a process tree
+
+sudo kill -9 1478 - Send SIGKILL to a process with PID=1478
+sudo kill -l - List all signals
+killall -9 bash - Send SIGKILL to all bash processes
+killall -i bash - Send SIGTERM to all bash processes with prompt
+
+Curl ------------------------------------------------------------------------------
+Curl is a tool for transferring data from or to a server
+curl -I https://www.gnu.org/ - Fetch only the HTTP headers of the specified URL
+
+Wget ------------------------------------------------------------------------------
+Wget is a free utility for non-interactive download of files from the Web
+wget -O latest-hugo.zip \https://github.com/gohugoio/hugo/archive/master.zip - Download file under different name
