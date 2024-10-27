@@ -1,0 +1,11 @@
+Check Permissions
+ls -l /path/to/your/folder
+
+    Change Ownership if needed
+    sudo chown -R $USER:$USER /path/to/your/folder
+
+    Change Permissions
+    sudo chmod -R 777 /path/to/your/folder
+
+Delete
+sudo rm -rf /path/to/your/folder
