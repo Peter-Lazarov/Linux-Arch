@@ -1,0 +1,12 @@
+[Unit]
+Description=Unmount Field
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+ExecStart=/usr/bin/unmount-field.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
