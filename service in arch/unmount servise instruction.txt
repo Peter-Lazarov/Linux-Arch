@@ -1,0 +1,28 @@
+//script file unmount-field.sh
+#!/bin/bash
+umount /run/media/peter/Field
+
+//service file unmount-field.service
+/etc/systemd/system/unmount-field.service
+
+[Unit]
+Description=Unmount Field
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+ExecStart=/usr/local/bin/unmount-field.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
+
+------------------------------------------------------------------
+
+sudo cp /home/peter/Documents/unmount-field.sh /usr/bin/
+sudo cp /home/peter/Documents/unmount-field.service /etc/systemd/system/
+chmod +x /usr/bin/unmount-field.sh
+
+
+systemctl enable unmount-field.service
