@@ -1,0 +1,30 @@
+1. Shell script called from shortcut
+---------------------------------------------------------
+with links from
+/usr/share/applications/
+copy to
+/home/peter/.config/autostart
+
+------------------------
+run application Autostart
+there can be added scrpts sh files
+but in them shouldn't have command - kill -9 $PPID
+
+
+
+
+
+2. Entry .desktop file then shell script
+---------------------------------------------------------
+the scripts can be executed at beginning also with entry file as this below
+and script file as shown in Exec=/home/peter/Documents/Linux/Scripts/brightness.sh
+
+[Desktop Entry]
+Exec=/home/peter/Documents/Linux/Scripts/brightness.sh
+Icon=dialog-scripts
+Name=brightness.sh
+Type=Application
+X-KDE-AutostartScript=true
+
+saved in brightness.desktop extension copy this file into
+the script sh file should be executable
