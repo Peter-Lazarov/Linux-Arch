@@ -1,0 +1,21 @@
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+git clone https://aur.archlinux.org/eclipse-java-bin.git
+cd eclipse-java-bin
+
+makepkg -si
+
+    if error for sha512sum
+
+    sha512sum eclipse.desktop
+    makepkg -si
+
+eclipse
+
+
+or
+----------------------------------------------
+yay -S eclipse-java-bin
+
