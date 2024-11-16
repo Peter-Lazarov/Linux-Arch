@@ -113,6 +113,13 @@ addgroup one - Create group
 
 
 Permisions ------------------------------------------------------------------------------
+chmod u+rw file.txt //Read and Write to Owner
+chmod g-w file.txt //Remove Write from Group
+chmod o+r file.txt //Read for Ohters
+chmod ug+w script.sh //Write for Owner/User and Group
+chmod u=rw,go=r file.txt //Read and Write for Owner and only read for Group and Others
+chmod o-rwx file.txt //Remove all permisions from Others
+
 Permissions Octal mask Description
 --------- 000 No permissions
 rw-rw-rw- 666 Everyone read + write
