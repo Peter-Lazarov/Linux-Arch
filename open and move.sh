@@ -17,5 +17,15 @@ wmctrl -r 'Downloads' -e 0,0,628,799,540
 
 
 
+#// to check window parameters
+#//---------------------
+
+#wmctrl -lG
+#wmctrl -lG | grep 'window_title'
+
+
+#// Another way
+#//---------------------
+
 #sudo pacman -S xorg-xwininfo
 #xwininfo
