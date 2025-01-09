@@ -1,0 +1,10 @@
+# First way
+history | grep restart
+# then type searched command for example - sudo
+
+# Second way
+ctrl + r
+# then type searched command for example - sudo
+# then
+ctrl + r
+# to cycle in all founded results
