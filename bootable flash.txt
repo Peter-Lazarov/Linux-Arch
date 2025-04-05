@@ -16,7 +16,13 @@ sudo ventoy -i /dev/sdX
 cp /path/to/archlinux.iso /path/to/usb/
 
 
-# -------------------------------------------------------------
+
 # Check ISO with one of the following commands
+# -------------------------------------------------------------
 $ sha256sum EndeavourOS_Endeavour_neo-2024.09.22.iso
 sha512sum EndeavourOS_Endeavour_neo-2024.09.22.iso
+
+
+# from endeavour site
+# -------------------------------------------------------------
+# https://discovery.endeavouros.com/installation/create-install-media-usb-key/2021/03/
