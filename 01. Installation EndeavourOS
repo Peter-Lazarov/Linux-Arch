@@ -1,24 +1,31 @@
+Endeavour OS
 
-Endeavour OS Legacy install
-Used on Lenovo Thinkcentre M81
-Flash drive I create on Windows 8.1 with rufus formatted as MBR
-(on Linux with dd command do not boot)
-
-Grub loader, because there is no boot loader
-
-12 MB unformated
-17 GB swap swap
-35-42 GB root
-50-70 GB home
-
-
+Legacy install
 --------------------------------------------
-This is UEFI installation it not work on M81
-Flash drive can be created on linux with dd command
+    Used on Lenovo Thinkcentre M81
+    Flash drive I create on Windows 8.1 with rufus formatted as MBR
 
-Endeavour OS UEFI
-512MB fat32 /boot/efi - bios-grub, boot
-35-42GB ext4 / - root
-50GB ext4 /home
+Grub loader
+9 MB unformated, flag bios_grub
+17 GB swap swap, flag swap
+    (For RAM 16,384MB)
+42-120 GB ext4 root, flag root
+    (The programs will be there.
+    When use docker with multiple containers larger 100-120GB)
+30-70 GB ext4 home
+    (the amound for files you plan to use)
 
 
+
+UEFI installation
+--------------------------------------------
+    It will not work on Lenovo Thinkcentre M81
+
+512MB fat32 /boot/efi, flag bios-grub, boot
+17 GB swap swap, flag swap
+    (For RAM 16,384MB)
+42-120 GB ext4 root, flag root
+    (The programs will be there.
+    When use docker with multiple containers larger 100-120GB)
+30-70 GB ext4 home
+    (the amound for files you plan to use)

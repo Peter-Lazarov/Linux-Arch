@@ -1,19 +1,10 @@
-# Ventoy
+# from endeavour site
+# -------------------------------------------------------------
+# https://discovery.endeavouros.com/installation/create-install-media-usb-key/2021/03/
 
-sudo pacman -S yay
-yay -S ventoy-bin
+sudo dd bs=4M if=endeavouros-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress
 
-
-
-# to see flash drive path
-lsblk
-    # or
-    sudo fdisk -l
-
-sudo ventoy -i /dev/sdX
-# sudo ventoy -i /dev/sdb
-
-cp /path/to/archlinux.iso /path/to/usb/
+# or on Windows with Rufus
 
 
 
@@ -21,8 +12,3 @@ cp /path/to/archlinux.iso /path/to/usb/
 # -------------------------------------------------------------
 $ sha256sum EndeavourOS_Endeavour_neo-2024.09.22.iso
 sha512sum EndeavourOS_Endeavour_neo-2024.09.22.iso
-
-
-# from endeavour site
-# -------------------------------------------------------------
-# https://discovery.endeavouros.com/installation/create-install-media-usb-key/2021/03/
