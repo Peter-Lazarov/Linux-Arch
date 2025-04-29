@@ -1,0 +1,2 @@
+https://girondi.net/post/yay_one_command/
+yay -Quq --aur | xargs -n 1 yay -S --noconfirm

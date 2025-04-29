@@ -1,8 +1,0 @@
-sudo mkdir -p /mnt/third_partition
-
-sudo nano /etc/fstab
-
-//sda5 is the address of partition that have problem
-/dev/sda3  /mnt/third_partition  ext4  defaults,nofail  0  2
-
-
