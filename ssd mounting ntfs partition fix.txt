@@ -1,6 +1,10 @@
 Option 1
 --------------------------------------------
-ntfsfix /dev/sdX
+sudo ntfsfix --clear-dirty /dev/sdX
+
+//my case from https://forum.endeavouros.com/t/internal-hard-disk-mounting-problem/51763
+sudo ntfsfix --clear-dirty /dev/sda5
+
 
 
 Option 2 remove warning - tested and have improvements
