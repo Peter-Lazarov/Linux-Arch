@@ -1,0 +1,33 @@
+Steps to change ICC profiles in KDE 6.4.2
+Open System Settings
+
+You can launch it from the application launcher or run:
+
+bash
+systemsettings
+
+
+
+Navigate to Display & Monitor → Color Corrections
+
+This section lets you manage color profiles per monitor.
+
+Select your display
+
+If you have multiple monitors, choose the one you want to adjust.
+
+Assign or import an ICC profile
+
+You can:
+
+Choose from existing profiles
+
+Click “Add Profile” to import a custom .icc file
+
+Enable or disable color correction
+
+Apply the changes
+
+Once selected, the profile will be applied immediately.
+
+KDE uses colord under the hood, so profiles are persistent across sessions.
