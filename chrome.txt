@@ -1,0 +1,6 @@
+yay -S brave-bin google-chrome
+
+
+#uninstall
+yay -Rns google-chrome
+rm -rf ~/.config/google-chrome ~/.cache/google-chrome

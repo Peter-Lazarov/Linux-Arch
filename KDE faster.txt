@@ -1,0 +1,21 @@
+Here are a few tips to optimize KDE's Dolphin file manager and improve its speed:
+    1. Disable File Previews:
+        ◦ Open Dolphin.
+        ◦ Click on the Control (three-dot) menu in the top-right corner and go to Configure Dolphin.
+        ◦ In the General section, uncheck Show Previews for files and folders. This reduces the loading time, especially in directories with many items.
+    2. Turn Off Search Indexing:
+        ◦ KDE's Baloo file indexing system can sometimes slow down Dolphin.
+        ◦ Open System Settings > Search > File Search.
+        ◦ Disable Enable File Search or exclude folders with many files that you don’t need indexed.
+    3. Avoid Restoring Tabs:
+        ◦ If Dolphin is set to remember open tabs from previous sessions, it can cause delays.
+        ◦ Open System Settings > Startup and Shutdown > Session Management.
+        ◦ Set Start with an empty session or ensure Dolphin doesn't restore tabs.
+    4. Limit Plugins:
+        ◦ Plugins can enhance Dolphin but may add to its startup time.
+        ◦ Go to Configure Dolphin > Services and disable any unnecessary services or extensions.
+    5. Reduce Animations:
+        ◦ KDE Plasma has a lot of visual effects that can affect performance.
+        ◦ Open System Settings > Workspace Behavior > Desktop Effects and disable unnecessary animations.
+    6. Use a More Lightweight Theme:
+        ◦ Switch to simpler themes that require fewer resources. Open System Settings > Appearance > Global Theme and choose a lightweight option.

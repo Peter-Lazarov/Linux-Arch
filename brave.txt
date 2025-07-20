@@ -1,3 +1,8 @@
 yay -S brave-bin
 
 brave --version
+
+
+#uninstall
+yay -Rns brave-bin
+rm -rf ~/.config/BraveSoftware ~/.cache/BraveSoftware
