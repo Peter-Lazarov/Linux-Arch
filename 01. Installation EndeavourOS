@@ -29,3 +29,20 @@ UEFI installation
     When use docker with multiple containers larger 100-120GB)
 30-70 GB ext4 home
     (the amound for files you plan to use)
+
+
+Dual Boot with Windows 11 and Endeavour OS - UEFI both
+--------------------------------------------
+Windows default partition
+100 MB fat32
+16 MB unknown
+120 GB NTFS System disk
+768 MB NTFS (maybe Health partition)
+240-620 GB NTFS Data Disk
+
+9 MB unformated
+17 GB swap swap, flag swap
+    (For RAM 16,384MB)
+30-120 GB ext4 root, flag root
+120-240 GB ext4 home
+
