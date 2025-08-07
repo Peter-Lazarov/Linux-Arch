@@ -1,2 +1,8 @@
 https://girondi.net/post/yay_one_command/
 yay -Quq --aur | xargs -n 1 yay -S --noconfirm
+
+
+# Update specific programs only
+yay -S visual-studio-code-bin
+
+yay -S brave-bin
