@@ -6,3 +6,15 @@ yay -Quq --aur | xargs -n 1 yay -S --noconfirm
 yay -S visual-studio-code-bin
 
 yay -S brave-bin
+
+yay -S vivaldi
+
+yay -S firefox
+
+yay -S google-chrome
+
+yay -S viber
+
+yay -S telegram-desktop
+
+yay -S discord
