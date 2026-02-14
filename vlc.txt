@@ -1,0 +1,8 @@
+  #This solve the problem with the codecs
+sudo pacman -S vlc-plugins-all
+
+
+  #Re-install of VLC
+sudo pacman -R vlc
+sudo pacman -S vlc
+
