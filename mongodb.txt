@@ -1,3 +1,30 @@
+Preparation
+-------------------------------------------------------
+Cleaning
+yay -Rns mongodb-compass mongodb-compass-bin
+rm -rf ~/.cache/yay/mongodb-compass
+rm -rf ~/.cache/yay/*
+sudo rm -rf /tmp/*
+
+
+Intall last node and npm
+-------------------------------------------------------
+which node
+this is good answer - /usr/bin/node
+
+node -v
+npm -v
+
+sudo pacman -S nodejs npm
+
+
+Install compass binary version (not that builds and requre electron)
+-------------------------------------------------------
+yay -S mongodb-compass-bin
+
+
+
+-------------------------------------------------------
 https://forum.endeavouros.com/t/installation-of-mongodb/42639
 
 sudo pacman -S --needed git base-devel
