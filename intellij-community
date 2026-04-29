@@ -1,0 +1,24 @@
+  #Install
+cd ~
+mkdir -p ~/apps
+cd ~/apps
+
+wget https://download.jetbrains.com/idea/ideaIC-2024.3.1.tar.gz
+
+tar -xzf ideaIC-2024.3.1.tar.gz
+rm ideaIC-2024.3.1.tar.gz
+
+mv idea-IC-* intellij
+
+  #Shortcut
+touch ~/.local/share/applications/idea.desktop
+nano ~/.local/share/applications/idea.desktop
+
+  #add this in file idea.desktop
+[Desktop Entry]
+Type=Application
+Name=IntelliJ IDEA Community
+Exec=/home/peter/apps/intellij/bin/idea
+Icon=/home/peter/apps/intellij/bin/idea.png
+Terminal=false
+Categories=Development;IDE;
