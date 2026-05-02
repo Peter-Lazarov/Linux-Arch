@@ -1,0 +1,6 @@
+ctrl + r
+
+history
+
+history | grep pm2
+
