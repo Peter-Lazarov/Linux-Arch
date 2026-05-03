@@ -22,3 +22,15 @@ Exec=/home/peter/apps/intellij/bin/idea
 Icon=/home/peter/apps/intellij/bin/idea.png
 Terminal=false
 Categories=Development;IDE;
+
+
+
+#-------------------------------------------
+Zoom key maping
+
+Open Settings → Keymap
+  Search for “Zoom IDE”
+    Change the shortcuts to something that works on your keyboard, e.g.:
+      Ctrl + Mouse Wheel (common choice)
+      Ctrl + = and Ctrl + -
+      Alt + = and Alt + -
