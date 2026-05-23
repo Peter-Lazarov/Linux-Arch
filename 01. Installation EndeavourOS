@@ -31,7 +31,7 @@ UEFI installation
     (the amound for files you plan to use)
 
 
-Dual Boot with Windows 11 and Endeavour OS - UEFI both
+Dual Boot with Windows 11 and Endeavour OS - UEFI both July - August 2024
 --------------------------------------------
 Windows default partition
 100 MB fat32
@@ -46,3 +46,21 @@ Windows default partition
 30-120 GB ext4 root, flag root
 120-240 GB ext4 home
 
+Dual Boot with Windows 11 and EndeavourOS - UEFI both 23 May 2026
+-----------------------------------------------------
+Windows default partitions
+100 MB  FAT32   EFI System Partition
+16 MB   MSR     Microsoft Reserved
+110 GB  NTFS    Windows System Disk
+768 MB  NTFS    Windows Recovery
+
+Secure boot must be off because of Endeavour OS
+
+Linux partitions (systemd-boot):
+2000 MB FAT32   mount: /efi     flags: boot, esp
+9 MB    unformatted   mount: none   flags: none
+8192 MB swap     mount: none   flags: swap
+60 GB   ext4     mount: /      flags: root
+70 GB   ext4     mount: /home  flags: none
+
+After installation the Linux boot manager must be put at first place in the BIOS startup order
