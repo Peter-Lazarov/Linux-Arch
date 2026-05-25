@@ -1,0 +1,21 @@
+# Commands to find and format flash drive when is not shown in windows
+
+lsblk
+
+#Be sure which device is flash drive and have no valuable data on it
+#Creage new partition table
+#n New partition
+#p Primari
+#1 partition number
+#Format the partition (sudo mkfs.vfat -F 32 /dev/sdb1)
+
+sudo dd if=/dev/zero of=/dev/sdX bs=1M count=10
+sudo fdisk /dev/sdX
+n
+p
+1
+enter
+enter
+
+sudo mkfs.vfat -F 32 /dev/sdXx
+
