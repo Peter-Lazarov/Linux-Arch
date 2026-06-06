@@ -7,12 +7,26 @@ sudo rm -rf /tmp/*
 3. Clear User Cache
 rm -rf ~/.cache/*
 
-4. Check for Old Logs
-sudo rm -rf /var/log/*
+4. Remove Unneeded Packages
+sudo pacman -Rns $(pacman -Qtdq)
 
-        5. Remove Unneeded Packages
-        sudo pacman -Rns $(pacman -Qtdq)
-
-6. Clean Up AUR Package Cache
+5. Clean Up AUR Package Cache
 yay -Sc
 
+6. Additional cleaning - logs, temporary files
+sudo journalctl --vacuum-size=200M
+sudo rm -rf /var/tmp/*
+sudo rm -rf /tmp/*
+
+7. (dangerous cleaning) Removes ALL cached packages, including the latest ones, cannot downgrade, without downloading it again
+sudo pacman -Scc
+
+
+# Safe block
+sudo pacman -Sc
+sudo rm -rf /tmp/*
+rm -rf ~/.cache/*
+sudo pacman -Rns $(pacman -Qtdq)
+yay -Sc
+sudo journalctl --vacuum-size=200M
+sudo rm -rf /var/tmp/*
