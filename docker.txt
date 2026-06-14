@@ -1,3 +1,4 @@
+#-------------Install Docker Desktop on Arch-based distributions
 https://docs.docker.com/desktop/install/linux/archlinux/
 
 wget https://download.docker.com/linux/static/stable/x86_64/docker-27.2.1.tgz -qO- | tar xvfz - docker/docker --strip-components=1
@@ -12,3 +13,26 @@ sudo pacman -U ./docker-desktop-x86_64.pkg.tar.zst
 Pass
 https://docs.docker.com/desktop/get-started/#credentials-management-for-linux-users
 
+#-------------Uninstall Docker Desktop on Arch-based distributions
+sudo pacman -Rns docker-desktop
+
+which docker
+  # /usr/local/bin/docker
+  # remove what shows
+    sudo rm -f /usr/local/bin/docker
+
+
+
+
+#-------------Install Docker Egine (console version) on Arch-based distributions
+sudo pacman -S docker docker-buildx docker-compose
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+
+
+#-------------Uninstall Docker Egine (console version) on Arch-based distributions
+sudo pacman -Rns docker
+sudo pacman -Rns docker-cli
+sudo pacman -Rns docker-buildx
+sudo pacman -Rns docker-compose
+sudo rm -rf /var/lib/docker
