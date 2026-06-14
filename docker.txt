@@ -16,6 +16,12 @@ https://docs.docker.com/desktop/get-started/#credentials-management-for-linux-us
 #-------------Uninstall Docker Desktop on Arch-based distributions
 sudo pacman -Rns docker-desktop
 
+  #Credentials remove
+sudo rm -f /usr/local/bin/docker-credential-desktop
+rm -f ~/.docker/config.json
+mkdir -p ~/.docker
+echo '{}' > ~/.docker/config.json
+
 which docker
   # /usr/local/bin/docker
   # remove what shows
@@ -36,3 +42,28 @@ sudo pacman -Rns docker-cli
 sudo pacman -Rns docker-buildx
 sudo pacman -Rns docker-compose
 sudo rm -rf /var/lib/docker
+
+
+#-------------Images
+  #Check its parameters
+docker manifest inspect mongo:8 | grep linux
+  #or
+docker manifest inspect mongo:8.3.4-nanoserver-ltsc2022
+
+  #Pull
+docker pull mongo:8
+
+  #Container - make
+docker run -d \
+  --name mongo8 \
+  -p 27057:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=root \
+  -e MONGO_INITDB_ROOT_PASSWORD=pass123 \
+  mongo:8
+
+
+
+
+
+
+
