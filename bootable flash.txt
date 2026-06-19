@@ -7,8 +7,18 @@ sudo dd bs=4M if=endeavouros-x86_64.iso of=/dev/sdb conv=fsync oflag=direct stat
 # or on Windows with Rufus
 
 
-
 # Check ISO with one of the following commands
 # -------------------------------------------------------------
 $ sha256sum EndeavourOS_Endeavour_neo-2024.09.22.iso
 sha512sum EndeavourOS_Endeavour_neo-2024.09.22.iso
+
+
+
+# -------------------------------------------------------------
+https://wiki.archlinux.org/title/USB_flash_installation_medium
+
+sudo dd bs=4M if=archlinux-2026.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress
+
+https://wiki.archlinux.org/title/Installation_guide
+https://wiki.archlinux.org/title/USB_flash_installation_medium
+
