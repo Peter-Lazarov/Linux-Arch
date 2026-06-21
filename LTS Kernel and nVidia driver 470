@@ -1,0 +1,53 @@
+# Boot from flash and connect to type on terminal of real linux with
+# Look for root partition
+lsblk
+/dev/nvme0n1p8
+# Mount it
+mount /dev/nvme0n1p8 /mnt
+   # If there have separate boot and home mount them
+   mount /dev/nvme0n1p1 /mnt/boot
+   mount /dev/nvme0n1p9 /mnt/home
+
+# Enter in real operating system
+arch-chroot /mnt
+
+# Install LTS kernel:
+sudo pacman -S linux-lts linux-lts-headers
+# Regenerate grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+    # Reboot and select LTS kernel:
+    # At GRUB → choose:
+        Advanced options → Arch Linux (linux-lts)
+
+# Install nVidia 470
+yay -S nvidia-470xx-dkms nvidia-470xx-utils
+
+    # Enable the NVIDIA kernel module
+sudo modprobe nvidia
+
+# Check driver
+nvidia-smi
+
+# Stop kernel update
+sudo nano /etc/pacman.conf
+        # Add line
+        # under section [options]
+    IgnorePkg = linux linux-headers linux-lts linux-lts-headers
+
+    # Block update of some kernel packages
+sudo nano /etc/pacman.conf
+[options]
+IgnorePkg = linux linux-headers linux-lts linux-lts-headers
+
+# Test
+    # Verify it works
+pacman -Qi linux-lts | grep "Install Reason"
+
+# It should show:
+Install Reason : Explicitly installed
+
+sudo pacman -Syu
+
+
+
