@@ -1,0 +1,64 @@
+# Install
+mkdir -p $HOME/dotnet
+tar -xzf dotnet-sdk-8.0.419-linux-x64.tar.gz -C $HOME/dotnet
+
+# Add path
+echo 'export DOTNET_ROOT=$HOME/dotnet' >> ~/.bash_profile
+echo 'export PATH=$PATH:$HOME/dotnet' >> ~/.bash_profile
+
+# Reload and test
+source ~/.bash_profile
+dotnet --list-sdks
+
+# Uninstall
+# nano ~/.bash_profile   - delete the two export lines
+# rm -rf ~/dotnet
+
+
+# Entity framework Core CLI tools
+dotnet tool install --global dotnet-ef
+
+
+#--------------------------------------------------------
+
+    # Remove DOCKER (optional)
+    sudo systemctl stop docker
+    sudo systemctl disable docker
+    sudo pacman -Rns docker docker-compose
+    sudo rm -rf /var/lib/docker
+    sudo rm -rf /var/lib/containerd
+
+# Install DOCKER (EndeavourOS / Arch)
+sudo pacman -Syu docker docker-compose
+  #possible need of restart of linux
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+  #Microsoft SQL Server 2022 (Linux container)
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+
+  --------------
+  # Maintenance
+  # Stop and remove old container
+    docker stop mssql
+    docker rm mssql
+
+  # Check container status
+  docker ps
+
+  docker stop mssql
+  docker start mssql
+
+
+  # Create new SQL server container
+docker run -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=123&&forDatabase' \
+  -p 1433:1433 \
+  --name mssql \
+  -d mcr.microsoft.com/mssql/server:2022-latest
+
+
+          # not needed only for check - Connect to SQL server (inside container)
+        docker exec -it mssql /opt/mssql-tools18/bin/sqlcmd \
+          -S localhost -U SA -P '123&&forDatabase' -C
