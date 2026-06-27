@@ -1,0 +1,5 @@
+# Easy way
+sudo blkdiscard /dev/nvme0n1
+
+# Secure way
+sudo nvme format /dev/nvme0n1
