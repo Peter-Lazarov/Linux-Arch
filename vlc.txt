@@ -1,5 +1,5 @@
-  #This solve the problem with the codecs
-sudo pacman -S vlc-plugins-all
+sudo pacman -S vlc
+sudo pacman -S ffmpeg gst-libav gst-plugins-bad gst-plugins-ugly
 
 
   #Re-install of VLC
