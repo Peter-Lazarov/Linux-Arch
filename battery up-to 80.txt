@@ -1,0 +1,11 @@
+sudo pacman -S tlp tlp-rdw
+sudo systemctl enable tlp --now
+sudo nano /etc/tlp.conf
+
+# in this area, add two lines
+# Battery Care
+
+START_CHARGE_THRESH_BAT0=40
+STOP_CHARGE_THRESH_BAT0=80
+
+sudo systemctl restart tlp
