@@ -1,4 +1,4 @@
-yay -S brave-bin google-chrome
+yay -S google-chrome
 
 
 #uninstall
