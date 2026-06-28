@@ -3,7 +3,7 @@ sudo pacman -Syu --noconfirm
 
 sudo pacman -S --noconfirm \
   firefox nodejs npm vlc ffmpeg gst-libav gst-plugins-bad gst-plugins-ugly \
-  guvcview libreoffice-fresh jdk21-openjdk maven docker docker-compose git
+  guvcview libreoffice-fresh jdk21-openjdk maven docker docker-compose git wget
 
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
