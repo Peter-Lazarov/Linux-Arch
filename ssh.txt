@@ -1,0 +1,24 @@
+
+SSH (Secure Shell) ------------------------------------------------------------------------------
+ssh 192.168.0.28 -l root - connecting to remote linux machine
+
+Jobs ------------------------------------------------------------------------------
+jobs - List all jobs
+jobs -l - Print all jobs with extended information
+
+Process ------------------------------------------------------------------------------
+ps aux - List every process on the system
+ps axjf - Print a process tree
+
+sudo kill -9 1478 - Send SIGKILL to a process with PID=1478
+sudo kill -l - List all signals
+killall -9 bash - Send SIGKILL to all bash processes
+killall -i bash - Send SIGTERM to all bash processes with prompt
+
+Curl ------------------------------------------------------------------------------
+Curl is a tool for transferring data from or to a server
+curl -I https://www.gnu.org/ - Fetch only the HTTP headers of the specified URL
+
+Wget ------------------------------------------------------------------------------
+Wget is a free utility for non-interactive download of files from the Web
+wget -O latest-hugo.zip \https://github.com/gohugoio/hugo/archive/master.zip - Download file under different name

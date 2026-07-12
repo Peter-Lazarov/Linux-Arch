@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/peter/Documents/Scripts_Arch/brightness_at_startup.sh
+Icon=application-x-shellscript
+Name=brightness_at_startup.sh
+Type=Application
+X-KDE-AutostartScript=true
