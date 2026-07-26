@@ -1,5 +1,12 @@
-https://girondi.net/post/yay_one_command/
-yay -Quq --aur | xargs -n 1 yay -S --noconfirm
+# Update Arch
+sudo pacman -Syu
+
+# Update Aur packages
+yay -Syu
+
+# unattended try 07 2026, this should update Arch as well
+yay -Syu --noconfirm --nocleanmenu --nodiffmenu
+
 
 
 # Update specific programs only
@@ -18,3 +25,8 @@ yay -S viber
 yay -S telegram-desktop
 
 yay -S discord
+
+
+# unattended update of Endeavour OS
+https://girondi.net/post/yay_one_command/
+yay -Quq --aur | xargs -n 1 yay -S --noconfirm
