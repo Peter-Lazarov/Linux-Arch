@@ -5,8 +5,7 @@ sudo pacman -Syu
 yay -Syu
 
 # unattended try 07 2026, this should update Arch as well
-yay -Syu --noconfirm --nocleanmenu --nodiffmenu
-
+yay -Syu --noconfirm
 
 
 # Update specific programs only
