@@ -1,32 +1,3 @@
-  # 1) Refresh mirrors (optional but recommended)
-sudo pacman -Sy --noconfirm
-
-  # 2) FULL PACMAN UPDATE (system packages)
-    # This MUST be done BEFORE AUR updates.
-    # If ANY error appears → STOP and DO NOT continue.
-sudo pacman -Syu
-
-  # 3) REBUILD INITRAMFS IF KERNEL WAS UPDATED
-if pacman -Q linux | grep -q "$(uname -r | cut -d- -f1)"; then
-    echo "Kernel updated → regenerating initramfs..."
-    sudo mkinitcpio -P
-fi
-
-  # 4) UPDATE AUR PACKAGES (AFTER pacman)
-yay -Syu --noconfirm
-
-  # 5) OPTIONAL: REINSTALL WAYLAND COMPONENTS IF PLASMA UPDATED
-if pacman -Q plasma-workspace | grep -q "plasma"; then
-    echo "Plasma updated → refreshing Wayland components..."
-    sudo pacman -S kwin plasma-workspace plasma-desktop qt6-wayland --noconfirm
-fi
-
-  # 6) OPTIONAL: RESTART SERVICES (safe)
-sudo systemctl daemon-reload
-sudo systemctl restart systemd-logind
-
-
-
 # Update Arch
 sudo pacman -Syu
 
