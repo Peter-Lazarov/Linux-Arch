@@ -10,8 +10,6 @@ pacstrap /mnt \
 # Неща за мрежа, аудио, EC, ACPI
 pacstrap /mnt \
     networkmanager \
-    iwd \
-    dhcpcd \
     sof-firmware
 
 # Неща за звук, bluetooth, енергоспестяване
@@ -19,11 +17,7 @@ pacstrap /mnt \
     pipewire \
     pipewire-alsa \
     pipewire-pulse \
-    wireplumber \
-    bluez \
-    bluez-utils \
-    tlp \
-    tlp-rdw
+    wireplumber
 
 
 # Автоматично монтиране на дисковете след инсталацията
@@ -31,6 +25,5 @@ pacstrap /mnt \
 # Взима UUID-ите на дяловете
 # Пише ги в /mnt/etc/fstab
 genfstab -U /mnt >> /mnt/etc/fstab
-
     # за проверка
     cat /mnt/etc/fstab
