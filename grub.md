@@ -60,6 +60,10 @@ sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=
 sudo nano /etc/default/grub
 # разкоментираме този ред
 #GRUB_DISABLE_OS_PROBER=false
+
+  # Време на изчкаване преди да зареди
+  sudo nano /etc/default/grub
+  GRUB_TIMEOUT=5
 ```
 
 ### Генерираме grub.cfg
