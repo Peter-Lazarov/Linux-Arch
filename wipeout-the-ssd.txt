@@ -1,3 +1,17 @@
+# Wipeout the nvme ssd
+sudo nvme format /dev/nvme0n1 -s 1
+sudo blkdiscard /dev/nvme0n1
+sudo wipefs -a /dev/nvme0n1
+
+# Wipeout the sata ssd
+sudo hdparm --user-master u --security-set-pass p /dev/sda
+sudo hdparm --user-master u --security-erase p /dev/sda
+sudo blkdiscard /dev/sda
+sudo wipefs -a /dev/sda
+
+
+
+# ------------------- before
 # Easy way
 sudo blkdiscard /dev/nvme0n1
 
