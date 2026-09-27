@@ -1,24 +1,22 @@
+# Set for save credentials on next push
+git config --global credential.helper store
+    
+    # Check credentials
+    git config --global --get credential.helper
+
+    # Delete credentials
+    rm ~/.git-credentials
+
+# Make push and type your credentials
+git status
 git add .
-git commit -m "what I do"
+git commit -m"what I do"
 git push
+# email
+# token
 
+    # to revert git commit -m "what I do"
+    git reset --soft HEAD~1
 
-# to revert git commit -m "what I do"
-git reset --soft HEAD~1
-
-# to revert git add .
-git reset HEAD .
-
-
-# Aliases
-# ----------------------------
-git config --global alias.stage-all 'add .'
-
-git config --global alias.commit-revert-last 'reset --soft HEAD~1'
-git config --global alias.stage-revert-all 'reset HEAD .'
-This way, you could use:
-
-
-git stage-all
-git commit-revert-last
-git stage-revert-all
+    # to revert git add .
+    git reset HEAD .
